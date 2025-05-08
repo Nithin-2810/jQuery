@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Responsive Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Bootstrap Variables Theming */
+    :root {
+      --bs-primary: #6610f2;
+      --bs-secondary: #6c757d;
+      --bs-success: #198754;
+      --bs-danger: #dc3545;
+      --bs-warning: #ffc107;
+      --bs-info: #0dcaf0;
+    }
+
+    .bg-custom {
+      background-color: var(--bs-info);
+    }
+
+    .border-custom {
+      border: 2px solid var(--bs-primary);
+      border-radius: 10px;
+    }
+
+    .text-custom {
+      text-align: center;
+      color: var(--bs-primary);
+    }
+
+    .m-custom {
+      margin: 20px 0;
+    }
+
+    .p-custom {
+      padding: 15px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .text-custom {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .p-custom {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-custom">
+
+  <!-- Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand text-custom" href="#">
+        <i class="bi bi-person-circle"></i> My App
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="aboutUs">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="settingsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+              <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Responsive Container -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow border-custom">
+          <div class="card-body">
+            <h4 class="text-custom mb-4">
+              <i class="bi bi-pencil-square"></i> Registration Form
+            </h4>
+            <img src="https://via.placeholder.com/600x150" class="img-fluid mb-3" alt="Banner Image">
+            <form id="registrationForm" class="p-custom" novalidate>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                  <div class="invalid-feedback">Please provide your first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                  <div class="invalid-feedback">Please provide your last name.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                <div class="invalid-feedback">Please provide a valid email.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                <div class="invalid-feedback">Password is required.</div>
+              </div>
+              <div class="mb-3">
+                <label for="profilePicture" class="form-label">Profile Picture</label>
+                <input type="file" id="profilePicture" class="form-control">
+                <img id="thumbnail" src="#" alt="Thumbnail Preview" class="img-thumbnail mt-2" style="display: none; width: 100px; height: 100px;">
+              </div>
+              <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-select" required>
+                  <option value="" disabled selected>Select your gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select your gender.</div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="dob" class="form-label">Date of Birth</label>
+                  <input type="date" id="dob" class="form-control" required>
+                  <div class="invalid-feedback">Please select your date of birth.</div>
+                </div>
+                <div class="col-6">
+                  <label for="phoneNumber" class="form-label">Phone Number</label>
+                  <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter your phone number">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100"><i class="bi bi-check-circle"></i> Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#registrationForm').on('submit', function (e) {
+        e.preventDefault();
+        const form = this;
+        if (form.checkValidity() === false) {
+          e.stopPropagation();
+          $(form).addClass('was-validated');
+        } else {
+          alert('Registration successful! Welcome to My App.');
+
+          // Update About Us Section
+          $('#aboutUs').text('About Us: My App is a responsive and user-friendly platform for seamless registration.');
+
+          // Update Settings Section
+          $('.dropdown-menu').prepend('<li><a class="dropdown-item text-info" href="#">Account Preferences</a></li>');
+        }
+      });
+
+      // Thumbnail preview
+      $('#profilePicture').on('change', function () {
+        const [file] = this.files;
+        if (file) {
+          $('#thumbnail')
+            .attr('src', URL.createObjectURL(file))
+            .show()
+            .addClass('border border-primary');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
