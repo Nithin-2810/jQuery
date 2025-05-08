@@ -1,0 +1,470 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Shopping</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #3d42e5;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1ac7b0;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: rgb(166, 240, 151);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #777;
+        }
+
+        .product-card button {
+            background-color: #69a9ec;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .quote-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e6f7ff;
+            font-style: italic;
+            color: #555;
+            border-left: 5px solid #007BFF;
+        }
+
+        footer {
+            background-color: #05737a;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        button.remove {
+            margin-left: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to ShopEase</h1>
+        <p>"Where every purchase brings happiness to your doorstep!"</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Shopping Cart</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="quote-section">
+        "Shopping is an art, and you are the artist."
+    </div>
+
+    <div class="container">
+        <h2 id="products">Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Product 1">
+                <h3>Product Name 1</h3>
+                <p>₹999</p>
+                <p>"Best value for your money!"</p>
+                <button onclick="addToCart('Product Name 1', 999)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9YL_gULeR_w6Vus30JxsM0lGuiHFHmJKG5Q&s" alt="Product 2">
+                <h3>Product Name 2</h3>
+                <p>₹1,299</p>
+                <p>"Upgrade your lifestyle today!"</p>
+                <button onclick="addToCart('Product Name 2', 1299)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVIpDUjGPsRbpeKQFw7TFjrWJkaRxY68b2zA&s" alt="Product 3">
+                <h3>Product Name 3</h3>
+                <p>₹1,499</p>
+                <p>"Quality you can trust."</p>
+                <button onclick="addToCart('Product Name 3', 1499)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="contact-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><strong>Address:</strong> 123 ShopEase Street, E-Commerce City, 45678</p>
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@shopease.com</p>
+                <p><strong>Follow Us:</strong></p>
+                <p>
+                    <a href="https://facebook.com" target="_blank">Facebook</a> | 
+                    <a href="https://twitter.com" target="_blank">Twitter</a> | 
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </p>
+            </div>
+            <div class="contact-form">
+                <h4>Send Us a Message</h4>
+                <form action="#" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ShopEase. All rights reserved. Designed by Nithin.</p>
+        <p>"Shop with confidence. Shop with ShopEase!"</p>
+    </footer>
+
+    <script>
+        const cart = []; 
+
+        function addToCart(productName, price) {
+            cart.push({ productName, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+
+            cartItemsContainer.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+
+                const li = document.createElement('li');
+                li.textContent = `${item.productName} - ₹${item.price}`;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove';
+
+                removeButton.onclick = () => removeFromCart(index);
+
+                li.appendChild(removeButton);
+                cartItemsContainer.appendChild(li);
+            });
+
+            cartTotalContainer.textContent = total;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Shopping</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+    
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #3d42e5;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1ac7b0;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: rgb(166, 240, 151);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #777;
+        }
+
+        .product-card button {
+            background-color: #69a9ec;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .quote-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e6f7ff;
+            font-style: italic;
+            color: #555;
+            border-left: 5px solid #007BFF;
+        }
+
+        footer {
+            background-color: #05737a;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to ShopEase</h1>
+        <p>"Where every purchase brings happiness to your doorstep!"</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Shopping Cart</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="quote-section">
+        "Shopping is an art, and you are the artist."
+    </div>
+
+    <div class="container">
+        <h2 id="products">Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>Product Name 1</h3>
+                <p>₹999</p>
+                <p>"Best value for your money!"</p>
+                <button onclick="addToCart('Product Name 1', 999)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>Product Name 2</h3>
+                <p>₹1,299</p>
+                <p>"Upgrade your lifestyle today!"</p>
+                <button onclick="addToCart('Product Name 2', 1299)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product3.jpg" alt="Product 3">
+                <h3>Product Name 3</h3>
+                <p>₹1,499</p>
+                <p>"Quality you can trust."</p>
+                <button onclick="addToCart('Product Name 3', 1499)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+    </div>
+
+    <div class="container" id="contact">
+        <div class="contact-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><strong>Address:</strong> 123 ShopEase Street, E-Commerce City, 45678</p>
+                <p><strong>Phone:</strong> +91-9876543210</p>
+                <p><strong>Email:</strong> support@shopease.com</p>
+                <p><strong>Follow Us:</strong></p>
+                <p>
+                    <a href="https://facebook.com" target="_blank">Facebook</a> | 
+                    <a href="https://twitter.com" target="_blank">Twitter</a> | 
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                </p>
+            </div>
+            <div class="contact-form">
+                <h4>Send Us a Message</h4>
+                <form action="#" method="POST">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ShopEase. All rights reserved. Designed by Nithin.</p>
+        <p>"Shop with confidence. Shop with ShopEase!"</p>
+    </footer>
+
+    <script>
+        const cart = []; 
+
+        function addToCart(productName, price) {
+            cart.push({ productName, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalContainer = document.getElementById('cart-total');
+
+            cartItemsContainer.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price;
+                const li = document.createElement('li');
+                li.textContent = `${item.productName} - ₹${item.price}`;
+                cartItemsContainer.appendChild(li);
+            });
+
+            cartTotalContainer.textContent = total;
+        }
+    </script>
+</body>
+</html>
+>>>>>>> 222851e80c5ed22f84377cc535b54a1efaad3fad
